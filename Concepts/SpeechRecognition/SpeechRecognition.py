@@ -13,7 +13,10 @@ def listen():
             voice = _listener.listen(source, phrase_time_limit = 5)
             command = str(_listener.recognize_google(voice))           
             print(command)
-            return command.lower()
+            if command != None:
+                return command.lower()
+            else:
+                return ""
     except sr.UnknownValueError:
         pass
     except Exception as e:

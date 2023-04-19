@@ -8,7 +8,7 @@ mp_drawing = mediapipe.solutions.drawing_utils
 
 #main loop
 #detects and draws the hands
-webcam = cv2.VideoCapture(1)
+webcam = cv2.VideoCapture(0)
 while webcam.isOpened():
     succes, img = webcam.read()
 

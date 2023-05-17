@@ -19,11 +19,12 @@ while True:
 
     hands, img = detector.findHands(img, flipType=False)
     text = "none"
+    text2 = "none"
     if hands:
         hand = hands[0]
         fingers = detector.fingersUp(hand)
         print(fingers)
-
+        text2 = fingers
         if fingers == [0,1,0,0,1]:
             text = 'I LOVE YOU'
         if fingers == [0, 0, 1, 0, 0] or fingers == [1,0,1,0,0]:
@@ -39,6 +40,7 @@ while True:
     color = (255, 155, 155)
     thickness = 2
     img = cv2.putText(img, 'ASL: ' + text, coordinates, font, fontScale, color, thickness, cv2.LINE_AA)
+    img = cv2.putText(img, 'FINGERS: ' + text2, coordinates2, font, fontScale, color, thickness, cv2.LINE_AA)
     #            3, (255,0,255),3)
     cv2.imshow("Img", img)
     k = cv2.waitKey(30) & 0xff

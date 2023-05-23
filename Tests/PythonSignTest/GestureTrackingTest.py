@@ -91,10 +91,10 @@ mp_holistic = mp.solutions.holistic
 DATA_PATH = os.path.join('MEDIAPIPE_DATA')
 
 # Signs we can detect
-actions = np.array(['welkom','mijn naam is','nog', 'vragen'])
+actions = np.array(['welkom','presentatie','nog', 'vragen'])
 
 # thirty videos of data
-no_sequences = 2
+no_sequences = 6
 
 
 # Length of the videos in frames

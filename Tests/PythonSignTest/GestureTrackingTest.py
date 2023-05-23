@@ -67,7 +67,7 @@ def extract_keypoints(results):
     return np.concatenate([pose, face, lh, rh])
 
 
-colors = [(245, 117, 160), (117, 245, 16), (16, 117, 245)]
+colors = [(245, 117, 160), (117, 245, 16), (16, 117, 245), (16, 217, 245)]
 
 
 def prob_viz(res, actions, input_frame, colors):
@@ -91,16 +91,16 @@ mp_holistic = mp.solutions.holistic
 DATA_PATH = os.path.join('MEDIAPIPE_DATA')
 
 # Signs we can detect
-actions = np.array(['hello', 'thanks', 'iloveyou'])
-
+actions = np.array(['welkom','mijn naam is','nog', 'vragen'])
 
 # thirty videos of data
-no_sequences = 4
+no_sequences = 2
+
 
 # Length of the videos in frames
 sequence_length = 30
 
-READMODE = True
+READMODE = False
 
 # Model Creation
 model = Sequential()

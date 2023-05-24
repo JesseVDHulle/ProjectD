@@ -100,7 +100,7 @@ no_sequences = 4
 # Length of the videos in frames
 sequence_length = 30
 
-READMODE = True
+READMODE = False
 
 # Model Creation
 model = Sequential()

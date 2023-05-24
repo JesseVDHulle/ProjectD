@@ -1,3 +1,5 @@
 cvzone
 mediapipe
 opencv-python
+tensorflow
+scikit-learn

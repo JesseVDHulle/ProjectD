@@ -222,6 +222,10 @@ else:
                     if not was_pressed:
                         sentence.append(actions[1])
                         was_pressed = True
+                elif keyboard.is_pressed('c'):
+                    if not was_pressed:
+                        sentence.append(actions[2])
+                        was_pressed = True
                 else:
                     was_pressed = False
                 # 3 viz Logic
@@ -238,7 +242,7 @@ else:
                 # viz probability
                 #img = prob_viz(res, actions, img, colors)
 
-            cv2.rectangle(img, (0, 0), (640, 40), (245, 117, 16), -1)
+            cv2.rectangle(img, (0, 0), (1280, 40), (77, 50, 33), -1)
             cv2.putText(img, ' '.join(sentence), (3, 30),
                         cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
             cv2.imshow('GestureTrackingTest', img)

@@ -244,8 +244,8 @@ else:
                 #img = prob_viz(res, actions, img, colors)
 
             cv2.rectangle(img, (0, 0), (1280, 40), (77, 50, 33), -1)
-            cv2.putText(img, ' '.join(sentence), (3, 30),
-                        cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
+            cv2.putText(img, ' '.join(sentence), (3, 80),
+                cv2.FONT_HERSHEY_SIMPLEX, 3, (255, 255, 255), 5, cv2.LINE_AA)
             cv2.imshow('GestureTrackingTest', img)
 
             # exit code

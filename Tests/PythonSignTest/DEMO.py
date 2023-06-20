@@ -235,9 +235,10 @@ else:
             #                sentence.append(actions[np.argmax(res)])
             #        else:
             #            sentence.append(actions[np.argmax(res)])
-
-            if len(sentence) > 5:
-                sentence = sentence[-5:]
+            if keyboard.is_pressed('q'):
+                sentence = sentence[-sentence.__len__():]
+            if len(sentence) > 3:
+                sentence = sentence[-3:]
 
                 # viz probability
                 #img = prob_viz(res, actions, img, colors)

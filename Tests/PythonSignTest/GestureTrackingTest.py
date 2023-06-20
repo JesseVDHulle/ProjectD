@@ -91,11 +91,11 @@ mp_holistic = mp.solutions.holistic
 DATA_PATH = os.path.join('MEDIAPIPE_DATA')
 
 # Signs we can detect
-actions = np.array(['hello', 'mijn naam is`', 'iloveyou'])
+actions = np.array(['hallo', 'mijn naam is'])
 
 
 # thirty videos of data
-no_sequences = 5
+no_sequences = 8
 
 # Length of the videos in frames
 sequence_length = 30
@@ -193,7 +193,7 @@ else:
     # cv2.destroyAllWindows()
     sequence = []
     sentence = []
-    threshold = 0.8
+    threshold = 0.85
     with mp_holistic.Holistic(min_detection_confidence=0.5, min_tracking_confidence=0.5) as holistic:
         while True:
             ret, frame = cap.read()

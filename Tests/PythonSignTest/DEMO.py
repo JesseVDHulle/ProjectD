@@ -235,8 +235,8 @@ else:
             #                sentence.append(actions[np.argmax(res)])
             #        else:
             #            sentence.append(actions[np.argmax(res)])
-            if keyboard.is_pressed('q'):
-                sentence = sentence[-sentence.__len__():]
+            if keyboard.is_pressed('space'):
+                sentence.clear()
             if len(sentence) > 3:
                 sentence = sentence[-3:]
 

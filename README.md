@@ -10,9 +10,9 @@ Students of Hogeschool Rotterdam
 
 ### Running the prototypes
 
-To run the SignLanguageApp prototype go to ./SignLanguageApp folder and run "main.py"
+To run the SignLanguageApp prototype go to ./SignLanguageApp folder and run "python ./main.py"
 
-To run the NLP prototype go to the ./NLP folder and run "nlp.py"
+To run the NLP prototype go to the ./NLP folder and run "python ./nlp.py"
 
 ## Concepts
 These are tested techniques from research

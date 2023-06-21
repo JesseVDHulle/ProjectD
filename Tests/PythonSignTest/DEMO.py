@@ -194,6 +194,8 @@ else:
     # cv2.destroyAllWindows()
     sequence = []
     sentence = []
+    count = 0
+    name = ""
     threshold = 0.85
     with mp_holistic.Holistic(min_detection_confidence=0.5, min_tracking_confidence=0.5) as holistic:
         while True:
@@ -224,8 +226,26 @@ else:
                         was_pressed = True
                 elif keyboard.is_pressed('c'):
                     if not was_pressed:
-                        sentence.append(actions[2])
-                        was_pressed = True
+                        if count < len(actions[2]):
+                            if count == 0:
+                                name += actions[2][count]
+                                sentence.append(name)
+                                count += 1
+                                was_pressed = True
+                            else:
+                                sentence.remove(name)
+                                name += actions[2][count]
+                                sentence.append(name)
+                                count += 1
+                                was_pressed = True
+                        else:
+                            pass
+                elif keyboard.is_pressed('space'):
+                    if not was_pressed:
+                        sentence = []
+                        was_pressed = True  
+                        count = 0     
+                        name = ""
                 else:
                     was_pressed = False
                 # 3 viz Logic
@@ -243,7 +263,7 @@ else:
                 # viz probability
                 #img = prob_viz(res, actions, img, colors)
 
-            cv2.rectangle(img, (0, 0), (1280, 40), (77, 50, 33), -1)
+            cv2.rectangle(img, (0, 0), (1280, 110), (77, 50, 33), -1)
             cv2.putText(img, ' '.join(sentence), (3, 80),
                 cv2.FONT_HERSHEY_SIMPLEX, 3, (255, 255, 255), 5, cv2.LINE_AA)
             cv2.imshow('GestureTrackingTest', img)

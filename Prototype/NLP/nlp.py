@@ -17,10 +17,10 @@ os.system('cls')
 while True:
     keywords = []
 
-    print("\nEnter keyword and then enter, to continue enter 'C' (Ctrl + C to Quit)")
+    print("\nEnter keyword and then enter, to continue enter ' ' (Ctrl + C to Quit)")
     while True:
         t = input()
-        if t.lower() != 'c':
+        if t.lower() != ' ':
             keywords.append(t)
         else:
             break
